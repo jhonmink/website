@@ -1,79 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGUELO.COM</title>
-    <link rel="icon" href="https://scontent.fmnl19-1.fna.fbcdn.net/v/t39.30808-6/379473078_966895657742634_7579760669274701205_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEwg9ZxS7gGSkCcgiyNgMe3-eZ8ax4AI6z55nxrHgAjrO0S5CpcHY7YWSnUa7hTVW40MCGstl27i8W1EaDVdIPB&_nc_ohc=Hx5AKpYZWt4AX_4iFfY&_nc_ht=scontent.fmnl19-1.fna&oh=00_AfB2-2-mlWBVdQCOJFW2-g8Oe9bhakVXd6i_re1B_6OO-w&oe=652F4359" type="image/x-icon">
+    <title>INFORMATIVE WEB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #videoContainer {
+            position: absolute;
+            bottom: 40%;
+            top: 0;
+            left: 0 ;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #loop {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
+    <div id="videoContainer">
+        <video id="loop" autoplay muted loop playsinline>
+            <source src="ability_0064_q1.webm" type="video/mp4" >        
+        </video>
+    </div>
+
+    <div class="content">
+        <div class="container-fluid" ">
+            <div class="row">
+                <div class="col-sm-1">
+                    <img class="img img-fluid" src="fighters.png" alt="logg" width="85" height="27">
+                </div>
+                
+                <div class="col-sm-11 text-light">
+                    <h1>LEE SIN</h1>
+                    <p>THE BLIND MONK</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                        <br>
+                        <br>
+                        <br>
+                                                              
+                    <div class="col text-light text-capitalize">
+                        <p>A master of Ionia's ancient martial arts, Lee Sin is a principled fighter who channels the essence of the dragon spirit to face any challenge. Though he lost his sight many years ago, the warrior-monk has devoted his life to protecting his homeland against any who would dare upset its sacred balance. Enemies who underestimate his meditative demeanor will endure his fabled burning fists and blazing roundhouse kicks.</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-2">  
+                            <button onclick="passive(); changeVideo('ability_0064_p1.webm');" class="nav-link text-center" style="background-color: lightslategray;" >
+                                <img class="img img-fluid" src="Lee_Sin_Flurry_WR.webp">
+                            </button>
+                            <a onclick="passive(); changeVideo('ability_0064_p1.webm');" class="nav-link text-center" style="background-color: lightslategray;">P</a>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <button onclick="Q(); changeVideo('ability_0064_Q1.webm');" class="nav-link text-center" style="background-color: lightslategray;">
+                                <img class="img img-fluid" src="Lee_Sin_Sonic_Wave_WR.webp">
+                            </button>
+                            <a onclick="Q(); changeVideo('ability_0064_Q1.webm');" class="nav-link text-center" style="background-color: lightslategray;">Q</a>  
+                        </div>
+
+                        <div class="col-sm-2">
+                            <button onclick="W(); changeVideo('ability_0064_W1.webm');" class="nav-link text-center" style="background-color: lightslategray;">
+                                <img class="img img-fluid" src="Lee_Sin_Safeguard.webp">
+                            </button>
+                            <a onclick="W(); changeVideo('ability_0064_W1.webm');" class="nav-link text-center" style="background-color: lightslategray;">W</a>  
+                        </div>
+
+                        <div class="col-sm-2">
+                            <button onclick="E(); changeVideo('ability_0064_E1.webm');" class="nav-link text-center" style="background-color: lightslategray;">
+                                <img class="img img-fluid" src="Lee_Sin_Tempest.webp">
+                            </button>
+                            <a onclick="E(); changeVideo('ability_0064_E1.webm');" class="nav-link text-center" style="background-color: lightslategray;">E</a>  
+                        </div>
+
+                        <div class="col-sm-2">
+                            <button onclick="R(); changeVideo('ability_0064_R1.webm');" class="nav-link text-center" style="background-color: lightslategray;">
+                                <img class="img img-fluid" src="Lee_Si (2).webp">
+                            </button>
+                            <a onclick="R(); changeVideo('ability_0064_R1.webm');" class="nav-link text-center" style="background-color: lightslategray;">R</a >  
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-l-9">                   
+                </div>           
+            
+                <div  class="col-3 text-light text-capitalize">
+                    <p id="passive1" class="mb-0">Q</p>
+                        <p id="passive2">SONIC WAVE / RESONATING STRIKE</p>
+                    <p id="passive3">Sonic Wave: Lee Sin projects a discordant wave of sound to locate his enemies, dealing physical damage to the first enemy it encounters. If Sonic Wave hits, Lee Sin can cast Resonating Strike for the next 3 seconds. Resonating Strike: Lee Sin dashes to the enemy hit by Sonic Wave, dealing physical damage based on the target's missing Health.</p>
+                </div>
+            </div>
  
-    <nav>
-        <ul>
-            <li><a href="#personal-details">Personal Details</a></li>
-            <li><a href="#educational-attainment">Educational Attainment</a></li>
-            <li><a href="#awards-achievements">Awards/Achievements</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#contact-me">Contact Me</a></li> 
-        </ul>
-    </nav>
-    <br>
-        <center> 
-        	  
-        	<img  src="https:"https://scontent.fmnl19-1.fna.fbcdn.net/v/t39.30808-6/379473078_966895657742634_7579760669274701205_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEwg9ZxS7gGSkCcgiyNgMe3-eZ8ax4AI6z55nxrHgAjrO0S5CpcHY7YWSnUa7hTVW40MCGstl27i8W1EaDVdIPB&_nc_ohc=mmsPCio0n6UAX_o6uCO&_nc_ht=scontent.fmnl19-1.fna&oh=00_AfB_jCrv5QLoJiRWLV8ky4Xq9X_sLUqeMTV5BjR0-BEEfg&oe=6548F899" alt="haha walang load", width="350px">
-       <h1 style="background: black ;" >RAYDEN D. AGUELO</h1>	
-        </center>	
+        </div>
+    </div>
+
     
-    <section id="personal-details">
-        <h2>Personal Details</h2>
-        <p>Name: Rayden D.Aguelo</p>
-        <p>Age: 19</p>
-        <p>Height(cm): 165</p>
-        <p>Birth Date: September, 1 2004</p>
-        <p>Address: Victoria Reyes, Dasmariña City, Cavite</p>
-        <p>Civil Status: Single</p>
-        <p>Contact Number: 09677037282</p>
-        <p>Email: raydenaguelo03@gmail.com</p>
-    </section>
-    <section id="educational-attainment">
-        <h2 style="color: white;">Educational Attainment</h2>
-        <ul>
-            <li>Senior High School: Emilio Aguinaldo College - Cavite</li>
-            <li>High School: Dasmariñas Integrated High School</li>
-          	<li>Elementary: Jesus Our Shepherd Christian School</li>
-        </ul>
-    </section>
-    <section id="awards-achievements">
-        <h2>Awards/Achievements</h2>
-        <ul>
-            <li>Diamond Rank(CrossFire PH)</li>
-            <li>Diamond Protector Title(League of Legends)</li>
-            <li>Strava Local Legend on Vertical ascent(Dec 3, 2022)</li>
-        </ul>
-    </section>
-    <section id="hobbies">
-        <h2 style="color: white;">Hobbies</h2>
-        <ul>
-            <li>Cycling</li>
-            <li>Chilling Out</li>
-            <li>Eating Ice Cream</li>
-            <li>Playing Online Games</li>
-        </ul>
-    </section>
-    <section id="contact-me">
-        <h2 style="color: white;">Contact Me</h2>
-        <form>
-            <label for="last">Last Name:</label>
-            <input type="text" id="last" name="last">
-            <label for="first">First Name:</label>
-            <input type="text" id="first" name="first">
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email">
-            <label for="message">Message:</label>
-            <input id="message" name="message" rows="5"></input>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-rqNhcd0LlgCVkA4DTz8s6YsFepuDz3U/cRvETG8g6fYOHHW01l9ALoFqef6s3oP" crossorigin="anonymous"></script>
+    <script>
+        function changeVideo(newSource) {
+
+            document.getElementById('loop').src = newSource;
+        }
+        function passive() {
+            var passive1 = document.getElementById('passive1');
+            var passive2 = document.getElementById('passive2');
+            var passive3 = document.getElementById('passive3');
+            passive1.innerHTML = "PASSIVE";
+            passive2.innerHTML = "FLURRY";
+            passive3.innerHTML = "After Lee Sin uses an ability, his next 2 basic attacks gain Attack Speed and return Energy";
+        }
+        function Q() {
+            var Q1 = document.getElementById('passive1');
+            var Q2 = document.getElementById('passive2');
+            var Q3 = document.getElementById('passive3');
+            Q1.innerHTML = "Q";
+            Q2.innerHTML = "SONIC WAVE / RESONATING STRIKE";
+            Q3.innerHTML = "Sonic Wave: Lee Sin projects a discordant wave of sound to locate his enemies, dealing physical damage to the first enemy it encounters. If Sonic Wave hits, Lee Sin can cast Resonating Strike for the next 3 seconds. Resonating Strike: Lee Sin dashes to the enemy hit by Sonic Wave, dealing physical damage based on the target's missing Health."
+        }
+        function W() {
+            var W1 = document.getElementById('passive1');
+            var W2 = document.getElementById('passive2');
+            var W3 = document.getElementById('passive3');
+            W1.innerHTML = "W";
+            W2.innerHTML = "SAFEGUARD / IRON WILL";
+            W3.innerHTML = "Safeguard: Lee Sin rushes to target ally, shielding himself from damage. If the ally is a champion, they are also shielded. After using Safeguard, Lee Sin can cast Iron Will for the next 3 seconds. Iron Will: Lee Sin's intense training allows him to thrive in battle. For 4 seconds, Lee Sin gains Life Steal and Spell Vamp."
+        }
+        function E() {
+            var E1 = document.getElementById('passive1');
+            var E2 = document.getElementById('passive2');
+            var E3 = document.getElementById('passive3');
+            E1.innerHTML = "E";
+            E2.innerHTML = "TEMPEST / CRIPPLEIRON WILL";
+            E3.innerHTML = "Tempest: Lee Sin smashes the ground, sending out a shockwave that deals magic damage and reveals enemy units hit. If Tempest hits an enemy, Lee Sin can cast cripple for the next 3 seconds. Cripple: Lee Sin cripples nearby enemies damaged by Tempest, reducing their Move Speed for 4 seconds. Move Speed recovers gradually over the duration."
+        }
+        function R() {
+            var R1 = document.getElementById('passive1');
+            var R2 = document.getElementById('passive2');
+            var R3 = document.getElementById('passive3');
+            R1.innerHTML = "R";
+            R2.innerHTML = "DRAGON'S RAGE";
+            R3.innerHTML = "Lee Sin performs a powerful roundhouse kick launching his target back, dealing physical damage to the target and any enemies they collide with. Enemies the target collides with are knocked into the air for a short duration. This technique was taught to him by Jesse Perring, although Lee Sin does not kick players off the map."
+        }
+    </script>
 </body>
 </html>
